@@ -25,7 +25,8 @@ function UserCard() {
           <div className="user-bio">
             <p>{user.bio}</p>
           </div>
-        </div>)
+        </div>
+      )
     };
     renderUser()
 
@@ -34,8 +35,8 @@ function UserCard() {
 
   return (
     <>
-      {/* {error ? <p role="alert">Could not find user data</p> :  */}
-      {userData}
+      {error ? <p role="alert">Could not find user data</p> : userData }
+    
     </>
   );
 }
