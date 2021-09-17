@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import "./style.css";
 
 function UserCard() {
+
   const user = useSelector((state) => state.result.user);
   const error = useSelector((state) => state.error);
-
 
   const [userData, setUserData] = useState()
 
@@ -13,30 +13,27 @@ function UserCard() {
     const renderUser = () => {
 
       setUserData(
-        <div id="user-card">
+        <div aria-label="user-information">
           <div className="user-intro">
-            <span className="user-login">{user.login}</span>
+            <span role="userLogin" className="user-login">{user.login}</span>
             <br />
-            <span className="user-name">{user.name}</span>
+            <span role="userName" className="user-name">{user.name}</span>
           </div>
 
-          <img className="profile-img" src={user.avatar_url} />
+          <img className="profile-img" src={user.avatar_url} alt="profile picture"/>
 
           <div className="user-bio">
-            <p>{user.bio}</p>
+            <p role="user-bio">{user.bio}</p>
           </div>
         </div>
       )
     };
     renderUser()
-
   }, [user])
-
 
   return (
     <>
-      {error ? <p role="alert">Could not find user data</p> : userData }
-    
+      { error ? <p role="alert">Could not find user data</p> : userData }
     </>
   );
 }

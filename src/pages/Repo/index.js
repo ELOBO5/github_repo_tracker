@@ -1,6 +1,5 @@
 import React from "react";
 import { BackButton, RepoCard, Profile } from "../../components";
-
 import './style.css'
 
 const Repo = () => {

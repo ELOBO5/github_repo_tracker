@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getResults } from '../../actions';
-import { Redirect } from 'react-router-dom';
 import './style.css';
 
-function Form() {
+function Form({ getResults }) {
 
     const [username, setUsername] = useState('');
-    const [redirect, setRedirect] = useState()
     const dispatch = useDispatch();
 
     function updateInput(e) {
@@ -18,7 +15,6 @@ function Form() {
         try {
             e.preventDefault();
             await getResults(dispatch, username);
-            // setRedirect(<Redirect to='/user' />)
             document.location = '/user'
         }catch(err){
             console.log(err)
@@ -27,13 +23,11 @@ function Form() {
     }
 
     return (
-        <>
         <form aria-label="username-form" onSubmit={handleSubmit}>
-            <input aria-label="username" type="text" placeholder='username' value={username} onChange={updateInput} />
+            <label htmlFor="username"></label>
+            <input id="username" type="text" placeholder='username' value={username} onChange={updateInput} />
             <input type="submit" value="Submit" />
         </form>
-        {redirect}
-        </>
     )
 }
 

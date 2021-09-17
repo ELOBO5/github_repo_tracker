@@ -20,7 +20,7 @@ const RepoList = () => {
 
 
     return (
-        <section id='repo-list'>
+        <section aria-label='list-of-repositories'>
             {error ? <p role="alert">Could not find repo data</p> : repoElements}
         </section>
     )

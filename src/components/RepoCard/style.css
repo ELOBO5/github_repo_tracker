@@ -2,13 +2,13 @@ span {
     padding: 0.6em 0em 0.6em 0em;
 }
 
-#repo-card, .intro, .stats {
+div[role="repository-information"], .intro, .stats {
     display: flex;
     flex-direction: column;
     font-size: 1.1rem;
 }
 
-#repo-card{
+div[role="repository-information"] {
     margin: 0px 250px;
     width: 500px;
 }
@@ -19,7 +19,7 @@ span {
 
 @media only screen and (max-width: 412px){
 
-    #repo-card{
+    div[role="repository-information"] {
         margin: auto;
         width:100%
     }

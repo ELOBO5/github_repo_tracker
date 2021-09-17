@@ -1,4 +1,4 @@
-#repo-list{
+section[aria-label='list-of-repositories'] {
     margin: 0px 250px;
     width: 500px;
 }
@@ -13,7 +13,7 @@
 
 @media only screen and (max-width: 412px){
 
-    #repo-list{
+    section[aria-label='list-of-repositories']{
         margin: auto;
         width:100%
     }
