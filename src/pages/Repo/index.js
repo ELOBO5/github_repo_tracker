@@ -5,11 +5,10 @@ import './style.css'
 const Repo = () => {
 
   return (
-    <div id='repo-page-container'>
+    <main id='repo-page-container'>
         <Profile />
         <RepoCard />
-        <BackButton />
-    </div>
+    </main>
   );
 };
 

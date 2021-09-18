@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BackButton } from '../../components';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import copy from 'copy-to-clipboard';
@@ -25,7 +26,15 @@ function RepoCard() {
     useEffect(() => {
         const renderCard = () => {
             setRepoData(
-                <div role="repository-information">
+                <section role="repository-information">
+                    <div id="button-row">
+                        <BackButton />
+                        <div className="links">
+                            <button onClick={copyToClipboard} name="html_url">Copy HTML link</button>
+                            <button onClick={copyToClipboard} name="ssh_url">Copy SSH link</button>
+                        </div>
+                    </div>
+
                     <div className="intro">
                         <span className="repo-name">{repo.name}</span>
                         <span className="repo-desc">{repo.description}</span>
@@ -37,12 +46,7 @@ function RepoCard() {
                         <span className="repo-forks">Forks: {repo.forks_count}</span>
                         <span className="repo-stars">Stargazers: {repo.stargazers_count}</span>
                     </div>
-
-                    <div className="links">
-                        <button onClick={copyToClipboard} name="html_url">Copy HTML link</button>
-                        <button onClick={copyToClipboard} name="ssh_url">Copy SSH link</button>
-                    </div>
-                </div>
+                </section>
             )
         };
         renderCard()

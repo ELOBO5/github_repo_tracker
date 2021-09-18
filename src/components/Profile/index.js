@@ -13,7 +13,7 @@ function UserCard() {
     const renderUser = () => {
 
       setUserData(
-        <div aria-label="user-information">
+        <section aria-label="user-information">
           <div className="user-intro">
             <span role="userLogin" className="user-login">{user.login}</span>
             <br />
@@ -25,7 +25,7 @@ function UserCard() {
           <div className="user-bio">
             <p role="user-bio">{user.bio}</p>
           </div>
-        </div>
+        </section>
       )
     };
     renderUser()

@@ -1,14 +1,7 @@
-#user-page-container {
+main {
     display: flex;
-    align-items:flex-start;
-    margin:50px 100px;
-}
-
-
-@media only screen and (max-width: 412px) {
-    #user-page-container {
-        flex-direction: column;
-        align-items: center;
-        margin: 50px 50px;
-    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
 }

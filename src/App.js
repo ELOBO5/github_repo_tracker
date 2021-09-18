@@ -6,7 +6,7 @@ import './index.css';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Switch>
         <Route exact path="/">
@@ -20,7 +20,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-    </div>
+    </>
   );
 }
 

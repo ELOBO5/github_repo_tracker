@@ -10,7 +10,7 @@ describe('RepoCard', () => {
     beforeEach(() => {
 
         jest.resetAllMocks();
-        
+
         const initState = {
             result: {
                 repos: [ {
@@ -39,12 +39,12 @@ describe('RepoCard', () => {
         const repoDiv = screen.getByRole('repository-information');
         expect(repoDiv.childElementCount).toBe(3)
         expect(repoDiv.children[0].childElementCount).toBe(2);
-        expect(repoDiv.children[1].childElementCount).toBe(4);
-        expect(repoDiv.children[2].childElementCount).toBe(2);
+        expect(repoDiv.children[1].childElementCount).toBe(2);
+        expect(repoDiv.children[2].childElementCount).toBe(4);
     });
 
     it('checkes that buttons call the copy function when they are clicked', () => {
-        const htmlBtn = screen.getAllByRole('button')[0];
+        const htmlBtn = screen.getAllByRole('button')[1];
         copy.mockResolvedValue(() => {});
         userEvent.click(htmlBtn);
         expect(copy).toHaveBeenCalledTimes(1);
@@ -52,7 +52,7 @@ describe('RepoCard', () => {
     });
 
     it('checkes that buttons call the copy function when they are clicked', () => {
-        const sshBtn = screen.getAllByRole('button')[1];
+        const sshBtn = screen.getAllByRole('button')[2];
         copy.mockResolvedValue(() => {});
         userEvent.click(sshBtn);
         expect(copy).toHaveBeenCalledTimes(1);

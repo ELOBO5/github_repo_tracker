@@ -1,20 +1,27 @@
 section[aria-label='list-of-repositories'] {
-    margin: 0px 250px;
-    width: 500px;
+    padding: 0 0 0 3em;
 }
 
 .repo-link {
     display: block;
     color: black;
     text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.25em 0.25em 0.25em 0.75em;
+    margin-bottom: 1.1em;
+    background-color: #EBEBD3;
 }
 
-@media only screen and (max-width: 412px){
+.repo-link:hover {
+    color: #a8201a;
+}
 
-    section[aria-label='list-of-repositories']{
-        margin: auto;
-        width:100%
+@media only screen and (max-width: 700px){
+
+    section[aria-label='list-of-repositories'] {
+        padding: 0;
+        margin-top: 2em;
     }
 }
